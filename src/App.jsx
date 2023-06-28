@@ -11,7 +11,7 @@ import Analytics from "./Analytics";
 function App() {
  
   // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT
-alert("View in desktop for better experience ,Thanks !")
+
   return (
     <div className="App ">
     
