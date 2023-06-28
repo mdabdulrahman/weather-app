@@ -1,0 +1,74 @@
+{
+    "sourceFile": "src/App.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1687789313651,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1687789376184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,6 @@\n     <div>\n       <h1 className=\"text-3xl font-bold\">Hello I am Rahman !</h1>\n     </div>\n   )\n-}\n\\ No newline at end of file\n+}\n+export default App\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687789758453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n function App()\n {\n   return (\n     <div>\n-      <h1 className=\"text-3xl font-bold\">Hello I am Rahman !</h1>\n+      <h1 className=\"text-3xl text-red-300 font-bold\">Hello I am Rahman !</h1>\n     </div>\n   )\n }\n export default App\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687792780503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n+import AreaChart from \"./AreaChart\"\n function App()\n {\n   return (\n     <div>\n       <h1 className=\"text-3xl text-red-300 font-bold\">Hello I am Rahman !</h1>\n+    <AreaChart/>\n     </div>\n   )\n }\n export default App\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687794212873,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,57 @@\n+import React from 'react';\n+import {\n+  Chart as ChartJS,\n+  CategoryScale,\n+  LinearScale,\n+  PointElement,\n+  LineElement,\n+  Title,\n+  Tooltip,\n+  Filler,\n+  Legend,\n+} from 'chart.js';\n+import { Line } from 'react-chartjs-2';\n+import faker from 'faker';\n+\n+ChartJS.register(\n+  CategoryScale,\n+  LinearScale,\n+  PointElement,\n+  LineElement,\n+  Title,\n+  Tooltip,\n+  Filler,\n+  Legend\n+);\n+\n+export const options = {\n+  responsive: true,\n+  plugins: {\n+    legend: {\n+      position: 'top' as const,\n+    },\n+    title: {\n+      display: true,\n+      text: 'Chart.js Line Chart',\n+    },\n+  },\n+};\n+\n+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];\n+\n+export const data = {\n+  labels,\n+  datasets: [\n+    {\n+      fill: true,\n+      label: 'Dataset 2',\n+      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),\n+      borderColor: 'rgb(53, 162, 235)',\n+      backgroundColor: 'rgba(53, 162, 235, 0.5)',\n+    },\n+  ],\n+};\n+\n+export function App() {\n+  return <Line options={options} data={data} />;\n+}\n"
+                },
+                {
+                    "date": 1687879520479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,68 +1,48 @@\n-import React from 'react';\n-import {\n-  Chart as ChartJS,\n-  CategoryScale,\n-  LinearScale,\n-  PointElement,\n-  LineElement,\n-  Title,\n-  Tooltip,\n-  Filler,\n-  Legend,\n-} from 'chart.js';\n-import { Line } from 'react-chartjs-2';\n-import faker from 'faker';\n \n-ChartJS.register(\n-  CategoryScale,\n-  LinearScale,\n-  PointElement,\n-  LineElement,\n-  Title,\n-  Tooltip,\n-  Filler,\n-  Legend\n-);\n+import { useState } from \"react\";\n+import \"./App.css\";\n \n-export const options = {\n-  responsive: true,\n-  plugins: {\n-    legend: {\n-      position: 'top' as const,\n-    },\n-    title: {\n-      display: true,\n-      text: 'Chart.js Line Chart',\n-    },\n-  },\n-};\n+import LineChart from \"./components/LineChart\";\n \n-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];\n+import { UserData } from \"./Data\";\n+import Temp from \"./Temp\";\n+import Analytics from \"./Analytics\";\n \n-export const data = {\n-  labels,\n-  datasets: [\n-    {\n-      fill: true,\n-      label: 'Dataset 2',\n-      data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),\n-      borderColor: 'rgb(53, 162, 235)',\n-      backgroundColor: 'rgba(53, 162, 235, 0.5)',\n-    },\n-  ],\n-};\n+function App() {\n+  const [userData, setUserData] = useState({\n+    labels: UserData.map((data) => data.year),\n+    datasets: [\n+      {\n+        label: \"Users Gained\",\n+        data: UserData.map((data) => data.userGain),\n+        backgroundColor: [\n+          \"rgba(75,192,192,1)\",\n\\ No newline at end of file\n+          \"#ecf0f1\",\n+          \"#50AF95\",\n+          \"#f3ba2f\",\n+          \"#2a71d0\",\n+        ],\n+        borderColor: \"black\",\n+        borderWidth: 2,\n+      },\n+    ],\n+  });\n \n-export function App() {\n-  return <Line options={options} data={data} />;\n-}\n-import AreaChart from \"./AreaChart\"\n-function App()\n-{\n+  // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT\n+\n   return (\n-    <div>\n-      <h1 className=\"text-3xl text-red-300 font-bold\">Hello I am Rahman !</h1>\n-    <AreaChart/>\n+    <div className=\"App\">\n+    \n+      {/* <div style={{ width: 700 }}>\n+        <LineChart chartData={userData} />\n+      </div> */}\n+      <div className=\"lg:flex  w-screen bg-[#60A5FA]\">\n+   \n+   <Temp/>\n+   <Analytics/>\n+  </div>\n     </div>\n-  )\n+  );\n }\n-export default App\n+\n+export default App;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687879551220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     \n       {/* <div style={{ width: 700 }}>\n         <LineChart chartData={userData} />\n       </div> */}\n-      <div className=\"lg:flex  w-screen bg-[#60A5FA]\">\n+      <div className=\"lg:flex  lg:w-screen bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n   </div>\n"
+                },
+                {
+                    "date": 1687937115381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+\n+import { useState } from \"react\";\n+import \"./App.css\";\n+\n+\n+\n+\n+import Temp from \"./Temp\";\n+import Analytics from \"./Analytics\";\n+\n+function App() {\n+ \n+  // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT\n+\n+  return (\n+    <div className=\"App\">\n+    \n+\n+      <div className=\"lg:flex overflow-x-hidden lg:w-screen bg-[#60A5FA]\">\n+   \n+   <Temp/>\n+   <Analytics/>\n+  </div>\n+    </div>\n+  );\n+}\n+\n+export default App;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687937356199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,59 +12,11 @@\n  \n   // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT\n \n   return (\n-    <div className=\"App\">\n+    <div className=\"App overflow-x-hidden\">\n     \n \n-      <div className=\"lg:flex overflow-x-hidden lg:w-screen bg-[#60A5FA]\">\n-   \n-   <Temp/>\n-   <Analytics/>\n-  </div>\n-    </div>\n-  );\n-}\n-\n-export default App;\n-\n-import { useState } from \"react\";\n-import \"./App.css\";\n-\n-import LineChart from \"./components/LineChart\";\n-\n-import { UserData } from \"./Data\";\n-import Temp from \"./Temp\";\n-import Analytics from \"./Analytics\";\n-\n-function App() {\n-  const [userData, setUserData] = useState({\n-    labels: UserData.map((data) => data.year),\n-    datasets: [\n-      {\n-        label: \"Users Gained\",\n-        data: UserData.map((data) => data.userGain),\n-        backgroundColor: [\n-          \"rgba(75,192,192,1)\",\n-          \"#ecf0f1\",\n-          \"#50AF95\",\n-          \"#f3ba2f\",\n-          \"#2a71d0\",\n-        ],\n-        borderColor: \"black\",\n-        borderWidth: 2,\n-      },\n-    ],\n-  });\n-\n-  // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT\n-\n-  return (\n-    <div className=\"App\">\n-    \n-      {/* <div style={{ width: 700 }}>\n-        <LineChart chartData={userData} />\n-      </div> */}\n       <div className=\"lg:flex  lg:w-screen bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n"
+                },
+                {
+                    "date": 1687937419473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n  \n   // IF YOU SEE THIS COMMENT: I HAVE GOOD EYESIGHT\n \n   return (\n-    <div className=\"App overflow-x-hidden\">\n+    <div className=\"App \">\n     \n \n       <div className=\"lg:flex  lg:w-screen bg-[#60A5FA]\">\n    \n"
+                },
+                {
+                    "date": 1687937677642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\n     <div className=\"App \">\n     \n \n-      <div className=\"lg:flex  lg:w-screen bg-[#60A5FA]\">\n+      <div className=\"lg:flex   bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n   </div>\n"
+                },
+                {
+                    "date": 1687937701401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\n     <div className=\"App \">\n     \n \n-      <div className=\"lg:flex   bg-[#60A5FA]\">\n+      <div className=\"lg:flex  lg:w-full bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n   </div>\n"
+                },
+                {
+                    "date": 1687937713298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\n     <div className=\"App \">\n     \n \n-      <div className=\"lg:flex  lg:w-full bg-[#60A5FA]\">\n+      <div className=\"lg:flex  lg:max-w-full bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n   </div>\n"
+                },
+                {
+                    "date": 1687937738351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\n     <div className=\"App \">\n     \n \n-      <div className=\"lg:flex  lg:max-w-full bg-[#60A5FA]\">\n+      <div className=\"lg:flex  lg:w-[100%] bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n   </div>\n"
+                },
+                {
+                    "date": 1687937772423,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   return (\n     <div className=\"App \">\n     \n \n-      <div className=\"lg:flex  lg:w-[100%] bg-[#60A5FA]\">\n+      <div className=\"lg:flex   bg-[#60A5FA]\">\n    \n    <Temp/>\n    <Analytics/>\n   </div>\n"
+                }
+            ],
+            "date": 1687789313651,
+            "name": "Commit-0",
+            "content": "function App()\n{\n  return (\n    <div>\n      <h1 className=\"text-3xl font-bold\">Hello I am Rahman !</h1>\n    </div>\n  )\n}"
+        }
+    ]
+}

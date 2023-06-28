@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/AreaChart.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1687792751308,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1687793240827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,35 @@\n-import React from 'react';\r\n-import { Line } from 'react-chartjs-2';\r\n+Sure! Here’s an example of a polar area chart with some sample data:\r\n \r\n-const AreaChart = () => {\r\n-  // Define your chart data and options\r\n+import React from \"react\";\r\n+import { Polar } from \"react-chartjs-2\";\r\n+\r\n+function PolarAreaChart() {\r\n   const data = {\r\n-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],\r\n+    labels: [\"Red\", \"Green\", \"Yellow\", \"Grey\", \"Blue\"],\r\n     datasets: [\r\n       {\r\n-        label: 'My Dataset',\r\n-        data: [65, 59, 80, 81, 56, 55, 40],\r\n-        fill: true,\r\n-        backgroundColor: 'rgba(75,192,192,0.2)',\r\n-        borderColor: 'rgba(75,192,192,1)',\r\n-      },\r\n-    ],\r\n+        label: \"# of Votes\",\r\n+        data: [12, 19, 3, 5, 2],\r\n+        backgroundColor: [\r\n+          \"rgba(255, 99, 132, 0.2)\",\r\n+          \"rgba(75, 192, 192, 0.2)\",\r\n+          \"rgba(255, 206, 86, 0.2)\",\r\n+          \"rgba(201, 203, 207, 0.2)\",\r\n+          \"rgba(54, 162, 235, 0.2)\"\r\n+        ],\r\n+        borderColor: [\r\n+          \"rgba(255,99,132,1)\",\r\n+          \"rgba(75, 192, 192, 1)\",\r\n+          \"rgba(255, 206, 86, 1)\",\r\n+          \"rgba(201, 203, 207, 1)\",\r\n+          \"rgba(54, 162, 235, 1)\"\r\n+        ],\r\n+        borderWidth: 1\r\n+      }\r\n+    ]\r\n   };\r\n \r\n-  const options = {\r\n-    scales: {\r\n-      y: {\r\n-        beginAtZero: true,\r\n-      },\r\n-    },\r\n-  };\r\n+  return <Polar data={data} />;\r\n+}\r\n \r\n-  return (\r\n-    <div>\r\n-      <h2>Area Chart Example</h2>\r\n-      <Line data={data} options={options} />\r\n-    </div>\r\n-  );\r\n-};\r\n-\r\n-export default AreaChart;\r\n+export default PolarAreaChart;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687793250033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-Sure! Here’s an example of a polar area chart with some sample data:\r\n \r\n+\r\n import React from \"react\";\r\n import { Polar } from \"react-chartjs-2\";\r\n \r\n function PolarAreaChart() {\r\n"
+                },
+                {
+                    "date": 1687793377477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n import React from \"react\";\r\n import { Polar } from \"react-chartjs-2\";\r\n \r\n-function PolarAreaChart() {\r\n+function AreaChart() {\r\n   const data = {\r\n     labels: [\"Red\", \"Green\", \"Yellow\", \"Grey\", \"Blue\"],\r\n     datasets: [\r\n       {\r\n@@ -31,5 +31,5 @@\n \r\n   return <Polar data={data} />;\r\n }\r\n \r\n-export default PolarAreaChart;\n\\ No newline at end of file\n+export default AreaChart;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687793562469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \r\n \r\n import React from \"react\";\r\n-import { Polar } from \"react-chartjs-2\";\r\n+import Polar  from \"react-chartjs-2\";\r\n \r\n function AreaChart() {\r\n   const data = {\r\n     labels: [\"Red\", \"Green\", \"Yellow\", \"Grey\", \"Blue\"],\r\n"
+                },
+                {
+                    "date": 1687793604451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n \r\n \r\n import React from \"react\";\r\n-import Polar  from \"react-chartjs-2\";\r\n \r\n+import { PolarArea } from 'react-chartjs-2';\r\n+\r\n+\r\n function AreaChart() {\r\n   const data = {\r\n     labels: [\"Red\", \"Green\", \"Yellow\", \"Grey\", \"Blue\"],\r\n     datasets: [\r\n@@ -28,8 +30,8 @@\n       }\r\n     ]\r\n   };\r\n \r\n-  return <Polar data={data} />;\r\n+  return <PolarArea data={data} />;\r\n }\r\n \r\n export default AreaChart;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687793941203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,13 @@\n \r\n \r\n import React from \"react\";\r\n+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from \"chart.js\";\r\n \r\n+\r\n+\r\n+\r\n+\r\n import { PolarArea } from 'react-chartjs-2';\r\n \r\n \r\n function AreaChart() {\r\n@@ -29,9 +34,9 @@\n         borderWidth: 1\r\n       }\r\n     ]\r\n   };\r\n-\r\n+  ChartJS.register(ArcElement, Tooltip, Legend);\r\n   return <PolarArea data={data} />;\r\n }\r\n \r\n export default AreaChart;\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1687792751308,
+            "name": "Commit-0",
+            "content": "import React from 'react';\r\nimport { Line } from 'react-chartjs-2';\r\n\r\nconst AreaChart = () => {\r\n  // Define your chart data and options\r\n  const data = {\r\n    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],\r\n    datasets: [\r\n      {\r\n        label: 'My Dataset',\r\n        data: [65, 59, 80, 81, 56, 55, 40],\r\n        fill: true,\r\n        backgroundColor: 'rgba(75,192,192,0.2)',\r\n        borderColor: 'rgba(75,192,192,1)',\r\n      },\r\n    ],\r\n  };\r\n\r\n  const options = {\r\n    scales: {\r\n      y: {\r\n        beginAtZero: true,\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <div>\r\n      <h2>Area Chart Example</h2>\r\n      <Line data={data} options={options} />\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default AreaChart;\r\n"
+        }
+    ]
+}
