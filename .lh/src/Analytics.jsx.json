@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 250,
+            "activePatchIndex": 251,
             "patches": [
                 {
                     "date": 1687872523289,
@@ -1008,6 +1008,10 @@
                 {
                     "date": 1688126803292,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n       </div>\r\n     )\r\n   }\r\n   return (\r\n-    <div className=\"lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]\" \r\n+    <div className=\"lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-lg lg:rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]\" \r\n     >\r\n       {/* user info */}\r\n <div className='flex w-11/12 py-11 lg:py-0 my-8 mx-auto justify-between'>\r\n <div>\r\n"
+                },
+                {
+                    "date": 1688126881034,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,9 +79,9 @@\n       </div>\r\n     )\r\n   }\r\n   return (\r\n-    <div className=\"lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-lg lg:rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]\" \r\n+    <div className=\"lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-xl lg:rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-xl  bg-[#E4F1FF]\" \r\n     >\r\n       {/* user info */}\r\n <div className='flex w-11/12 py-11 lg:py-0 my-8 mx-auto justify-between'>\r\n <div>\r\n"
                 }
             ],
             "date": 1687872523289,
