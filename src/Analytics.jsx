@@ -80,7 +80,7 @@ function Analytics() {
     )
   }
   return (
-    <div className="lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]" 
+    <div className="lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-lg lg:rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]" 
     >
       {/* user info */}
 <div className='flex w-11/12 py-11 lg:py-0 my-8 mx-auto justify-between'>
