@@ -11,7 +11,7 @@ weatherData=fullWeatherData;
   }
   else{
     weatherData=fullWeatherData.slice(0,4);
-    console.log(weatherData)
+   
   }
   const [graphData, setgraphData] = useState({
     labels: weatherData.map((data) => data.temp),
@@ -107,14 +107,14 @@ weatherData=fullWeatherData;
 <div className='bg-white lg:h-[32%] h-96 w-11/12 mx-auto rounded-[2rem]'>
   <div className='lg:flex pb-11 items-center pt-6 w-full pl-11 justify-between'>
     <h1 className='font-semibold text-lg'>Upcoming hours</h1>
-    <div className='flex lg:w-2/4 w-full pt-4 lg:pt-0 justify-end'>
+    <div className='flex lg:w-2/4 w-full  pt-4 lg:pt-0 justify-end'>
     <h1 className='flex lg:pr-6 text-xs lg:text-sm px-2 py-1  bg-[#ccc] rounded-xl items-center'>Rain precipitation
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 pl-2 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
 
     </h1>
-    <h1 className='flex lg:ml-4 lg:mr-11 px-2 py-1 text-sm font-semibold bg-[#ccc] rounded-xl items-center'>Next days
+    <h1 className='flex lg:ml-4 ml-2 mr-6 lg:mr-11 px-2 py-1 text-sm font-semibold bg-[#ccc] rounded-xl items-center'>Next days
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 pl-2 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
 </svg>
