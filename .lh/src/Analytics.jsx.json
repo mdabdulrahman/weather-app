@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 266,
+            "activePatchIndex": 267,
             "patches": [
                 {
                     "date": 1687872523289,
@@ -1072,6 +1072,10 @@
                 {
                     "date": 1688128302436,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n weatherData=fullWeatherData;\r\n   }\r\n   else{\r\n     weatherData=fullWeatherData.slice(0,4);\r\n-    console.log(weatherData)\r\n+   \r\n   }\r\n   const [graphData, setgraphData] = useState({\r\n     labels: weatherData.map((data) => data.temp),\r\n     datasets: [\r\n"
+                },
+                {
+                    "date": 1688128381442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -113,9 +113,9 @@\n   <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M19.5 8.25l-7.5 7.5-7.5-7.5\" />\r\n </svg>\r\n \r\n     </h1>\r\n-    <h1 className='flex lg:ml-4 ml-2 mr-6 lg:mr-11 px-2 py-1 text-sm font-semibold bg-[#ccc] rounded-xl items-center'>Next days\r\n+    <h1 className='flex lg:ml-4 ml-2 mr-2 lg:mr-11 px-2 py-1 text-sm font-semibold bg-[#ccc] rounded-xl items-center'>Next days\r\n     <svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" strokeWidth={1.5} stroke=\"currentColor\" className=\"w-6 pl-2 h-6\">\r\n   <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M8.25 4.5l7.5 7.5-7.5 7.5\" />\r\n </svg>\r\n \r\n"
                 }
             ],
             "date": 1687872523289,
