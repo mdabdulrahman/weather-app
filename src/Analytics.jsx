@@ -1,15 +1,24 @@
 import React, { useState } from 'react'
 import profile from './profile.png'
-import { UserData } from "./Data";
+import { fullWeatherData } from "./Data";
 import LineChart from "./components/LineChart";
 import MoreDetails from './MoreDetails';
 function Analytics() {
-  const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.temp),
+  let weatherData;
+  if(window.screen.width >768)
+  {
+weatherData=fullWeatherData;
+  }
+  else{
+    weatherData=fullWeatherData.slice(0,4);
+    console.log(weatherData)
+  }
+  const [graphData, setgraphData] = useState({
+    labels: weatherData.map((data) => data.temp),
     datasets: [
       {
        
-        data: UserData.map((data) => data.percent),
+        data: weatherData.map((data) => data.percent),
         backgroundColor: 'rgba(96,165,250,0.8)',
         borderColor: "black",
         borderWidth: 0,
@@ -42,7 +51,7 @@ function Analytics() {
             size: 12,
             weight: 'bold',
           },
-          callback: (value,i) => `${UserData[i].percent}%`,
+          callback: (value,i) => `${weatherData[i].percent}%`,
         },
         
       },
@@ -118,10 +127,10 @@ function Analytics() {
 
     {/* timings */}
     <div className='flex pb-3 px-1 justify-between items-center'>
-      {UserData.map((data)=>timings(data))}
+      {weatherData.map((data)=>timings(data))}
     </div>
     {/* chart */}
-<LineChart chartData={userData} options={options}/>
+<LineChart chartData={graphData} options={options}/>
 </div>
 </div>
 

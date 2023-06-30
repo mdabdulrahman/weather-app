@@ -1,4 +1,4 @@
-export const UserData = [
+export const fullWeatherData = [
   {
     id: 1,
     percent: 55,
