@@ -83,14 +83,14 @@ let cr=[
     "0%","25%","50%","75%","100%"
 ]
   return (
-    <div className='w-11/12 mx-auto'>
+    <div className='w-11/12  mx-auto'>
         <h1 className='font-bold text-lg my-11'>More details of today's weathers</h1>
 
 {/* first row */}
 <div className='lg:flex justify-between items-center'>
 
         {/* humidity */}
-        <div className='bg-white  p-6 rounded-[2.5rem] w-[30%]'>
+        <div className='details-box'>
             <div className='flex justify-between items-center'>
                 <h1 className='font-semibold'>Humidity</h1>
               <div className='w-11 px-3 py-2 rounded-xl  bg-[#60A5FA]'>
@@ -125,7 +125,7 @@ let cr=[
 
 
 {/* wind*/}
-<div className='bg-white  p-6 rounded-[2.5rem] w-[30%]'>
+<div className='details-box'>
             <div className='flex justify-between items-center'>
                 <h1 className='font-semibold'>Wind</h1>
               <div className='w-11 px-3 py-2 rounded-xl  bg-[#60A5FA]'>
@@ -145,7 +145,7 @@ let cr=[
 
 
 {/* precipitation */}
-<div className='bg-white  p-6 rounded-[2.5rem] w-[30%]'>
+<div className='details-box'>
             <div className='flex justify-between items-center'>
                 <h1 className='font-semibold'>Precipitation</h1>
               <div className='w-11 px-3 py-2 rounded-xl  bg-[#60A5FA]'>
@@ -177,7 +177,7 @@ let cr=[
 <div className='lg:flex justify-between mt-11 items-center'>
 
         {/* UV index */}
-        <div className='bg-white  p-6 rounded-[2.5rem] w-[30%]'>
+        <div className='details-box'>
             <div className='flex justify-between items-center'>
                 <h1 className='font-semibold'>UV index</h1>
               <div className='w-11 px-3 py-2 rounded-xl  bg-[#60A5FA]'>
@@ -204,7 +204,7 @@ let cr=[
 
 
 {/* feels like*/}
-<div className='bg-white  p-6 rounded-[2.5rem] w-[30%]'>
+<div className='details-box'>
             <div className='flex justify-between items-center'>
                 <h1 className='font-semibold'>Feels like</h1>
               <div className='w-11 px-3 py-2 rounded-xl  bg-[#60A5FA]'>
@@ -224,7 +224,7 @@ let cr=[
 
 
 {/* chance of rain */}
-<div className='bg-white  p-6 rounded-[2.5rem] w-[30%]'>
+<div className='details-box'>
             <div className='flex justify-between items-center'>
                 <h1 className='font-semibold'>Chance of rain</h1>
               <div className='w-11 px-3 py-2 rounded-xl  bg-[#60A5FA]'>

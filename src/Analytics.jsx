@@ -80,10 +80,10 @@ function Analytics() {
     )
   }
   return (
-    <div className="lg:w-3/4 w-full h-screen lg:h-[65rem] rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]" 
+    <div className="lg:w-3/4 w-full h-full lg:h-[65rem] rounded-l-[3.2rem] lg:rounded-r-[0rem] rounded-r-[3.2rem]  bg-[#E4F1FF]" 
     >
       {/* user info */}
-<div className='flex w-11/12 my-8 mx-auto justify-between'>
+<div className='flex w-11/12 py-11 lg:py-0 my-8 mx-auto justify-between'>
 <div>
 <h1 className='font-bold mb-1 text-lg'>Welcome back Rahman !</h1>
 <h1 className='font-semibold'>Check out today's weather information</h1>
@@ -95,11 +95,11 @@ function Analytics() {
 </div>
 </div>
 
-<div className='bg-white h-[32%] w-11/12 mx-auto rounded-[2rem]'>
-  <div className='flex pb-11 items-center pt-6 w-full pl-11 justify-between'>
+<div className='bg-white lg:h-[32%] h-96 w-11/12 mx-auto rounded-[2rem]'>
+  <div className='lg:flex pb-11 items-center pt-6 w-full pl-11 justify-between'>
     <h1 className='font-semibold text-lg'>Upcoming hours</h1>
-    <div className='flex lg:w-2/4 w-3/4 justify-end'>
-    <h1 className='flex pr-6 text-sm px-2 py-1 bg-[#ccc] rounded-xl items-center'>Rain precipitation
+    <div className='flex lg:w-2/4 w-full pt-4 lg:pt-0 justify-end'>
+    <h1 className='flex lg:pr-6 text-xs lg:text-sm px-2 py-1  bg-[#ccc] rounded-xl items-center'>Rain precipitation
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 pl-2 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
 </svg>
@@ -113,7 +113,7 @@ function Analytics() {
     </h1>
     </div>
   </div>
-  <div className='w-11/12 h-28  mx-auto'>
+  <div className='w-11/12  lg:h-28 h-24  mx-auto'>
   <div className="w-full h-full">
 
     {/* timings */}
