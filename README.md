@@ -1,2 +1,2 @@
 ﻿# weather-app
-Link to website : https://weather-app-mdabdulrahman.vercel.app/
+The data in the website is static
